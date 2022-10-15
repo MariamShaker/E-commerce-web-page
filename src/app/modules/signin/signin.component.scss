@@ -1,0 +1,53 @@
+.sign-in{
+    padding: 50px 0px 50px;
+    background-color: #e3e6f352;
+    
+    
+    .form-section{
+        width: 60%;
+        margin: auto;
+        margin-top: 30px;
+        background-color: #fff;
+        border-radius: 35px;
+        padding: 90px;
+        border: 1px solid #e3e6f3;
+        box-shadow: 20px 20px 30px rgb(0 0 0 / 2%);
+        .title{
+            font-weight: 700;
+            margin-bottom: 64px;
+        }
+        .text-danger{
+            font-weight: 600;
+        }
+        .form-control{
+            margin-bottom: 5px;
+            background-color: #e3e6f3bd;
+            border: 1px solid #e3e6f3;
+            &:focus{
+                box-shadow: none;
+                border: none;
+            }
+        }
+        
+        .pass-box{
+            position: relative;
+            
+            .display-pass{
+                position: absolute;
+                right: 13px;
+                top: 41px;
+                cursor: pointer;
+            }
+        }
+        .form-label {
+            font-weight: 600;
+        }
+    
+    }
+    .btn-primary{
+        background-color: #088178;
+        border: none;
+        padding: 12px 25px;
+        font-weight: 600;
+    }
+}

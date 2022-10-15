@@ -1,0 +1,49 @@
+.products{
+    padding: 60px 0px 60px;
+    :host ::ng-deep app-shop .ng-star-inserted:after{
+        content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAArQAAAK0BVE7WMAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAADzSURBVEiJtda9SgNREIbhZ4KCaJ0+RdTbMDZ6LSKId5gmpXgBtsYErEULZSxcIazuZn8/OM2w874sZ+ecjcw0Ziaj0rsIImIWEcuIWEXEfG9DZrZaeEQW6xnz2udbwg+w2RH8Sk4HERSSK3yUJOsqSWtBIbmukJwNImgj6SyokbzgfBBBE0ngHjc4bD4NfzLFcam2xSLwjqMe8Lo8TPA1EhwEbnHnZ4i6ZoqTUm2LxRCbfIk3FZs8KrzvoP0HH2bQmsI7CWrg/Q+74ktbl+C1x3WrGy0zP/G6U1rjIjOf6pravsUMS6zsuc0yUxRNo2X0v4pvteozU/GUS2kAAAAASUVORK5CYII=);
+        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(258deg) brightness(102%) contrast(101%);
+    }
+    .my-pagination ::ng-deep .ngx-pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        a{
+            text-decoration: none;
+            color: #fff;
+            padding: 0px;
+            &:hover{
+            background: transparent;
+            
+            }
+        }
+        .current , li {
+        background: #088178;
+        width: 40px;
+        padding: 10px;
+        height: 40px;
+        text-align: center;
+        color: #fff;
+        border-radius: 5px;
+        font-weight: 500;
+        text-decoration: none;
+        transition: 0.3s;
+        cursor: pointer;
+        margin-right: 4px;
+
+        &:hover{
+            background: #fff;
+            color: #088178;
+        }
+      }}
+    
+      ::ng-deep .star {
+        font-size: 1.5rem;
+        color: #b7b29a47;
+        font-size: 22px;
+      }
+      .filled {
+        color: #FFD700;
+        font-size: 22px;
+      }
+}

@@ -1,0 +1,94 @@
+
+.blog-section{
+    padding: 150px 0px 150px;
+    .blog{
+        margin-bottom: 150px;
+        .blog-box{
+            position: relative;
+            .number{
+                color: #c9cbce;
+                font-size: 70px;
+                font-weight: 700;
+                position: absolute;
+                top: -55px;
+                z-index: -1;
+            }
+            .image-box{
+                margin-right: 40px;
+                .image{
+                    width: 100%;
+                    height: 300px;
+                    object-fit: cover;
+                }
+            }
+        }
+        
+        .blog-details{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .title{
+                margin-bottom: 25px
+            }
+            .continue{
+                font-weight: 700;
+                text-decoration: none;
+                color: #000;
+                transition: 0.3s ease;
+                font-size: 12px;
+                &:hover{
+                    color: #088178;
+                }
+                &:hover::after{
+                    background-color: #088178;
+                }
+                &::after{
+                    content: '';
+                    display: inline-block;
+                    width: 60px;
+                    height: 1px;
+                    background-color: #000;
+                    margin-left: 15px;
+                    border-radius: 3px;
+                    margin-bottom: 3px;
+                    &:hover{
+                        background-color: #088178;
+                    }
+                }
+            }
+        }
+    }
+    
+    .my-pagination ::ng-deep .ngx-pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        a{
+            text-decoration: none;
+            color: #fff;
+            padding: 0px;
+            &:hover{
+            background: transparent;
+            
+            }
+        }
+        .current , li {
+        background: #088178;
+        width: 40px;
+        padding: 10px;
+        height: 40px;
+        text-align: center;
+        color: #fff;
+        border-radius: 5px;
+        font-weight: 500;
+        text-decoration: none;
+        transition: 0.3s;
+        cursor: pointer;
+        margin-right: 4px;
+
+        &:hover{
+            background: #fff;
+            color: #088178;
+        }
+      }}
+}

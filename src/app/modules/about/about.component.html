@@ -1,0 +1,44 @@
+<slider></slider>
+<section class="about">
+    <div class="container">
+        <div class="row" *ngFor="let item of data">
+            <div class="col-md-6">
+                <div class="image-box">
+                    <img src="{{item.imageUrl}}" alt="" width="500" height="400" class="image">
+                </div>
+            </div>
+            <div class="col-md-6 about-details">
+                <h1 class="title">{{item.title | titlecase}}</h1>
+                <p>{{item.description}}</p>
+                <abbr title="" class="text">{{item.sectionText}}</abbr>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="about-app">
+    <div class="container">
+        <div class="row" *ngFor="let item of data">
+            <div class="col-md-12 text-center">
+                <h1 class="title">Download Our <a href="https://play.google.com" target="_blank">App</a></h1>
+                <div class="video-box">
+                    <video autoplay muted  src="{{item.videoUrl}}" class="video"></video>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="feature">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2"><img src="../../../assets/images/features/f1.png" alt=""></div>
+            <div class="col-md-2"><img src="../../../assets/images/features/f2.png" alt=""></div>
+            <div class="col-md-2"><img src="../../../assets/images/features/f3.png" alt=""></div>
+            <div class="col-md-2"><img src="../../../assets/images/features/f4.png" alt=""></div>
+            <div class="col-md-2"><img src="../../../assets/images/features/f5.png" alt=""></div>
+            <div class="col-md-2"><img src="../../../assets/images/features/f6.png" alt=""></div>
+        </div>
+    </div>
+</section>
+
+<sign-up-section></sign-up-section>

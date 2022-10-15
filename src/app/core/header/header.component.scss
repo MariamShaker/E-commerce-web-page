@@ -1,0 +1,31 @@
+
+header{
+    background-color: #e3e6f3;
+    box-shadow: 0 5px 15px rgb(0,0,0,0.06);
+    .navbar{
+        padding: 25px 0px 25px 0px ;
+    }
+    .nav-item{
+        .nav-link{
+            font-size: 16px;
+            color: #1a1a1a;
+        }
+        .active-route{
+            color:#088178;
+            font-weight: 600;
+            &::after{
+                content: '';
+                transition: 0.5s;
+                width: 55%;
+                height: 3px;
+                border-radius: 10px;
+                display: block;
+                background-color: #088178;
+            }
+        }
+    }
+    .logout-btn{
+        background-color: #088178;
+        font-weight: 500;
+    }
+}

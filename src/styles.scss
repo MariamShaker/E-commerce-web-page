@@ -1,1 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+/*Importing color variables*/
+@import '../src/app/shared/variables';
+/* shared style between component*/
+@import '../src/app/modules/home/featured-products/featured-products.component.scss';
+@import '../src/app/modules/shop/slider/slider.component.scss';
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+/*Importing fontawsome*/
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+
+/*google font*/
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@200;300;400;500;700;800;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Spartan', sans-serif;
+}
+body{
+    font-family: 'Spartan', sans-serif;
+}
+
+// .router-coontainer{
+//     position: relative;
+//     & > *{
+//         position: absolute;
+//         top: 0;
+//         right: 0;
+//         left: 0;
+//     }
+// }
+

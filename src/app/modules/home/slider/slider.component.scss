@@ -1,0 +1,44 @@
+.slider{
+    height: 100vh;
+    width: 100%;
+    background-image: url(../../../../assets/images/hero4.png);
+    background-size: cover;
+    background-position: top 20% right 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 80px;
+    flex-direction: column;
+    align-content: flex-start;
+    text-align: left;
+
+    .small-title {
+        font-weight: 600;
+        color: #1a1a1a;
+        padding-bottom: 20px;
+    }
+    .title {
+        font-size: 52px;
+        font-weight: bold;
+    }
+    .title-info {
+        font-size: 54px;
+        font-weight: bold;
+        color: #088178;
+    }
+    .description{
+        color: #797c85;
+        font-weight: 500;
+    }
+    .shop-btn{
+        margin-left: 70px;
+        color: #088178;
+        font-weight: 700;
+        border: none;
+        background-color: transparent;
+        background-image: url(../../../../assets/images/button.png);
+        background-repeat: no-repeat;
+        padding: 11px;
+        width: 220px;
+    }
+}

@@ -1,0 +1,27 @@
+footer{
+    .section-title{
+        font-weight: 600;
+        margin-bottom: 25px;
+        font-size: 18px;
+        
+    }
+    .section-item{
+
+    }
+    .contact-info{
+        color: #465b52;
+        
+    }
+    .social-icon{
+        display: flex;
+        .fa-brands{
+            font-size: 20px;
+            color: #465b52;
+            margin-right: 12px;
+        }
+    }
+    .cara-app{
+        border: 1px solid #088178;
+        border-radius: 6px;
+    }
+}

@@ -1,0 +1,41 @@
+<section class="arrivals">
+    <h1 class="section-title">New Arrival</h1>
+    <p class="section-description ">Summer Collection New Modern Design</p>
+    <div class="row">
+        <div class="col-md-3" *ngFor="let item of product;  index as i">
+            <div class="product">
+                
+                    <img src="{{item.imageUrl}}" alt="" width="262" height="262" class="image">
+                
+                <p class="brand"> {{item.brandName}} </p>
+                <p >
+                    <a routerLink="/cart" class="name">{{item.name}}</a>
+                </p>
+                <div  *ngIf="userActive">
+                    <!--<ngb-rating [max]="5" [(rate)]="currentRate"></ngb-rating>-->
+                    <ngb-rating [(rate)]="currentRate" [max]="5" class="rating">
+                        <ng-template let-fill="fill" >
+                          <span class="star" [class.filled]="fill " >&#9733;</span>
+                        </ng-template>
+                      </ngb-rating>
+
+                </div>
+                <div  *ngIf="!userActive">
+                    <ngb-rating [(rate)]="currentRate" [max]="5" class="rating" [readonly]="true">
+                        <ng-template let-fill="fill" >
+                          <span class="star" [class.filled]="fill " >&#9733;</span>
+                        </ng-template>
+                      </ngb-rating>
+
+                </div>
+                <div class="buy-product">
+                    <p class="price">{{item.price | currency}}</p>
+                    <button routerLink="/cart"  class="cart-icon"><i class="fa fa-cart-shopping"></i></button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+
+</section>

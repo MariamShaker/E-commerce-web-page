@@ -1,0 +1,18 @@
+<div class="dashboard">
+    <div class="container">
+        <h3 class="text-center mt-2">{{'add New product' | titlecase}}</h3>
+        <form [formGroup]="addForm"  >
+            <input type="text" class="form-control" formControlName="name" id=""  required>
+            <input type="number" class="form-control" formControlName="price" id=""  required>
+            <div class="input-group">
+                <input type="file"  class="form-control" formControlName="image" required #image>
+            </div>
+            <input type="submit" value="Add" class="btn btn-primary" [disabled]="addForm.invalid" (click)="addNewProduct(addForm)">
+        </form>
+        <div *ngIf="done">
+            <div class="alert alert-success text-center mt-3" role="alert">
+                {{done}}
+              </div>
+        </div>
+    </div>
+</div>

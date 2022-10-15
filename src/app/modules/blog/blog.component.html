@@ -1,0 +1,43 @@
+<slider></slider>
+<section class="blog-section">
+    <div class="container" >
+        <div class="row blog" *ngFor="let item of blog | paginate:{ 
+            itemsPerPage: tableSize,
+            currentPage: page,
+            totalItems: count
+        };  index as i">
+            <div class="col-md-6 blog-box" >
+                
+                    <h3 class="number">{{item.number}}</h3>
+                    <div class="image-box">
+                        <img src="{{item.imageUrl}}" alt=""  height="500" class="image">
+
+                    </div>
+
+                
+
+            </div>
+            <div class="col-md-6 blog-details" >
+                
+                    <h4 class="title">{{item.title | titlecase}}</h4>
+                    <p>{{item.description }}</p>
+                    <a href="#" class="continue">{{item.continueLink | uppercase}}</a>
+                
+
+
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-md-12 text-center">
+                <pagination-controls
+                class="my-pagination"
+                previousLabel=""
+                nextLabel=""
+                (pageChange)="onDataChanged($event)"
+                >
+            </pagination-controls>
+            </div>
+        </div>
+    </div>
+</section>
+<sign-up-section></sign-up-section>

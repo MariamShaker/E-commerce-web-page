@@ -1,0 +1,92 @@
+<div class="sign-in">
+    <div class="container">
+        <div class="form-section">
+            <h2 class="text-center title">Sign Up</h2>
+            <form [formGroup]="form">
+                <div class="mb-5">
+                    <label for="userName" class="form-label">Your Name <span class="text-danger">*</span></label>
+                    <input type="text" [class.is-invalid]="userName?.invalid && userName?.touched" class="form-control"
+                        id="userName" formControlName="userName">
+                    <div *ngIf="userName?.touched && userName?.invalid">
+                        <small *ngIf="userName?.errors?.['required']" class="text-danger">Enter Your Name </small>
+                        <small *ngIf="userName?.errors?.['forbiddenName']"
+                            class="text-danger">{{userName?.errors?.['forbiddenName'].value}} Not Allowed</small>
+                    </div>
+                </div>
+                <div class="mb-5">
+                    <label for="emailId" class="form-label">Email<span class="text-danger">*</span> </label>
+                    <input type="email" formControlName="email" class="form-control" id="emailId" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    <div *ngIf="email?.invalid && email?.touched ">
+                        <small *ngIf="email?.errors?.['required']" class="text-danger">Please Enter Your Email</small>
+                        <small *ngIf="email?.errors?.['email']" class="text-danger">follow the email style</small>
+                    </div>
+                </div>
+                <div class="mb-5 pass-box">
+                    <label for="password" class="form-label">Password<span class="text-danger">*</span></label>
+                    <input type="password" [type]="showP ? 'text' : 'password'" class="form-control" id="password"
+                        formControlName="password" minlength="6">
+                    <span (click)="showPasswordPassword()" *ngIf="this.showP" class="display-pass">
+                        <i class="fa-solid fa-eye"></i>
+                    </span>
+                    <span (click)="showPasswordPassword()" *ngIf="!this.showP" class="display-pass">
+                        <i class="fa-solid fa-eye-slash"></i>
+                    </span>
+                    <div *ngIf="password?.touched && password?.invalid">
+                        <small *ngIf="password?.errors?.['required']" class="text-danger">Enter The Password </small>
+                        <small *ngIf="password?.errors?.['noSpace']" class="text-danger"> Space Not Allowed </small>
+                        <small *ngIf="password?.hasError('minlength')" class="text-danger">Min Length 6 numbers or char</small>
+        
+                    </div>
+        
+        
+                </div>
+                <div class="mb-5 pass-box">
+                    <label for="confirmPass" class="form-label">Confirm Password<span class="text-danger">*</span></label>
+                    <input type="password" class="form-control" [type]="show ? 'text' : 'password'" id="confirmPass"
+                        formControlName="confirmPassword" userName="confirmPassword">
+                    <span (click)="showPassword()" *ngIf="this.show" class="display-pass">
+                        <i class="fa-solid fa-eye"></i>
+                    </span>
+                    <span (click)="showPassword()" *ngIf="!this.show" class="display-pass">
+                        <i class="fa-solid fa-eye-slash"></i>
+                    </span>
+                    <span *ngIf="form?.errors?.['misMatch']" class="text-danger mb-1">password not match</span>
+                </div>
+                <div class="mb-5">
+                    <label for="address" class="form-label">Address<span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="address" formControlName="address">
+                    <div *ngIf="form.get('address')?.touched && form.get('address')?.invalid">
+                        <small *ngIf="form.get('address')?.errors?.['required']" class="text-danger">Address Is Required</small>
+        
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary"  (click)="signUp(form)">Submit</button>
+
+                </div>
+        
+            </form>
+            <br>
+            <div class="alert alert-danger" *ngIf="errMassage">
+                {{errMassage}}
+            </div>
+        </div>
+        
+    
+    </div>
+</div>
+
+
+
+    <!--<form #f="ngForm">
+        <input ngModel type="text" class="form-control mb-2" placeholder="Your Name" required>
+        <input ngModel type="email" class="form-control mb-2" placeholder="Your email" required>
+        <input ngModel type="password" class="form-control mb-2" #pass="ngModel" placeholder="Your password" required>
+        <input ngModel type="password" class="form-control mb-2" #confirmPass="ngModel" placeholder="confirm password"
+            required>
+        <input ngModel type="text" class="form-control mb-2" placeholder="Your Address" required>
+        <button class="btn btn-success text-center"
+            [disabled]="f.invalid || confirmPass.value !== pass.value ">Submit</button>
+    </form>
+</div>-->
