@@ -8,19 +8,24 @@ import { User } from '../model/user.model';
   providedIn: 'root',
 })
 export class UsersService {
-  constructor(private fireStore: AngularFirestore,private fireStorage: AngularFireStorage, private router:Router) {}
+  constructor(
+    private fireStore: AngularFirestore,
+    private fireStorage: AngularFireStorage,
+    private router: Router
+  ) {}
 
-addUser(user:User,id:any){
-  
-  return this.fireStore.collection("users").doc(id).set(user)
-  .then(()=>{
-    this.router.navigate(['/'])
-  })
-}
-
+  addUser(user: User, id: any) {
+    return this.fireStore
+      .collection('users')
+      .doc(id)
+      .set({ id: user.id })
+      .then(() => {
+        this.router.navigate(['/']);
+      });
+  }
 
   // addNewUser(id: any, name: any, email: any, address: any) {
-    
+
   //   return this.fireStore.collection(`users/`).doc(id).set({name,email,address});
   // }
   // .then(()=>{

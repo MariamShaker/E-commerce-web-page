@@ -1,44 +1,56 @@
 /*start sign up section*/
-.sign-up{
-    // background-image: url(../../../../assets/images/banner/b14.png);
-    background-image: url(/assets/images/banner/b14.png);
-    background-color: #041e42;
-    background-repeat: no-repeat;
-    background-position: 20% 30%;
-    padding: 82px;
-    .title{
-        font-size: 22px ;
-        font-weight: 700;
-        color: #fff;
-        margin-bottom: 10px;
-    }
-    .description{
-        font-size: 14px ;
-        font-weight: 600;
-        color: #818ea0;
-        .offer{
-            color: #ffbd27;
-            text-decoration: none;
-            transition: 0.4s;
-            &:hover{
-                color: #818ea0;
-            }
-        }
-    }
-    .form-control:focus{
-        box-shadow: none;
-    }
+@media (max-width: 575.98px) {
+  .sign-up {
+    padding: 17px !important;
     .sign-up-btn {
-        background-color: #088178;
-        padding: 15px 30px;
-        color: #fff;
-        font-size: 20px;
-        font-weight: 500;
-        border: none;
-        &:focus{
-            box-shadow: none;
-        }
+      padding: 10px 10px !important;
+      font-size: 16px !important;
     }
+  }
+}
+.sign-up {
+  // background-image: url(../../../../assets/images/banner/b14.png);
+  background-image: url(/assets/images/banner/b14.png);
+  background-color: #041e42;
+  background-repeat: no-repeat;
+  background-position: 20% 30%;
+  padding: 82px;
 
+  .title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  .description {
+    font-size: 14px;
+    font-weight: 600;
+    color: #818ea0;
+    @media (max-width: 991.98px) {
+      margin-bottom: 25px;
+    }
+    .offer {
+      color: #ffbd27;
+      text-decoration: none;
+      transition: 0.4s;
+      &:hover {
+        color: #818ea0;
+      }
+    }
+  }
+  .form-control:focus {
+    box-shadow: none;
+  }
+  .sign-up-btn {
+    background-color: #088178;
+    padding: 15px 30px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    &:focus {
+      box-shadow: none;
+    }
+  }
 }
 /*end sign up section*/

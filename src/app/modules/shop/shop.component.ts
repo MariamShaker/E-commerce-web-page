@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { CartService } from './../../services/cart.service';
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/model/product.model';
 import { AuthService } from 'src/app/services/auth.service';
@@ -12,7 +14,8 @@ import { StarService } from 'src/app/services/star.service';
 export class ShopComponent implements OnInit {
 
   userActive:boolean=false;
-  constructor(private productService:ProductsService,private authService:AuthService, private starService:StarService) { }
+  constructor(private productService:ProductsService,private router: Router,
+    private authService:AuthService, private starService:StarService,private CartService:CartService) { }
   currentRate = 5;
   product:Product[]=[]
   page:number=1;
@@ -24,15 +27,15 @@ export class ShopComponent implements OnInit {
 
   ngOnInit(): void {
     this.getData();
-    
+
     //check if user active
     this.authService.user.subscribe((result) =>{
       if (result) {
-        this.userActive=true 
+        this.userActive=true
       }
       else {
-          this.userActive= false 
-          
+          this.userActive= false
+
         }
     })
   }
@@ -43,6 +46,11 @@ export class ShopComponent implements OnInit {
       this.product= res
       // console.log(this.product)
     });
+  }
+
+  addItemToCart(item:any) {
+    this.CartService.addToCart(item);
+     this.router.navigate(['/cart']) // redirect to cart page
   }
 
   onDataChanged(event:any){

@@ -1,3 +1,4 @@
+import { trigger, style, transition, animate } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Goods } from 'src/app/model/goods.model';
@@ -12,8 +13,12 @@ import { GoodsService } from 'src/app/services/goods.service';
 })
 export class HomeComponent implements OnInit {
   goods: Goods[] = [];
-  userActive:boolean=false;
-  constructor(private goodService: GoodsService, private cartService:CartService,private authService:AuthService) {}
+  userActive: boolean = false;
+  constructor(
+    private goodService: GoodsService,
+    private cartService: CartService,
+    private authService: AuthService
+  ) {}
 
   // getData() {
   //   return this.goodService.getAllGoods().subscribe((data) => (this.goods = data));
@@ -32,15 +37,14 @@ export class HomeComponent implements OnInit {
     // this.getData();
     this.getId();
   }
-  
-  addToCart(amount:any , index:any) {
-    
-    let selectedGood = this.goods[index]
-    let data={
-      name:selectedGood.name,
+
+  addToCart(amount: any, index: any) {
+    let selectedGood = this.goods[index];
+    let data = {
+      name: selectedGood.name,
       amount: +amount,
-      price: selectedGood.price
-    }
-    this.cartService.addToCart(data).then(()=>console.log('added'))
+      price: selectedGood.price,
+    };
+    this.cartService.addToCart(data).then(() => console.log('added'));
   }
 }

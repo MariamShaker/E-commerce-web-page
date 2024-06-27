@@ -1,7 +1,11 @@
 <app-header></app-header>
-    <!--<div [@router-animation]="myOutlet.activatedRouteData['index']" class="router-coontainer">
+<!--<div [@router-animation]="myOutlet.activatedRouteData['index']" class="router-coontainer">
         <router-outlet #myOutlet="outlet"></router-outlet>
 
     </div>-->
-    <router-outlet></router-outlet>
+<!--<router-outlet></router-outlet>-->
+<main [@routing]="outletRef.isActivated ? outletRef.activatedRoute:''">
+  <router-outlet #outletRef="outlet"></router-outlet>
+
+</main>
 <app-footer></app-footer>

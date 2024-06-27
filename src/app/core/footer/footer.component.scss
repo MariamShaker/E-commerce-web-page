@@ -1,4 +1,21 @@
 footer{
+    @media (max-width: 767.98px) { 
+        .nav-block{
+            text-align: center;
+            margin-bottom: 30px;
+            &:first-child{
+                .logo,.social-icon{
+                    justify-content: center;
+                }
+            }
+            &:last-child{
+                .nav{
+                    display: block;
+                }
+            }
+        }
+     }
+
     .section-title{
         font-weight: 600;
         margin-bottom: 25px;
@@ -7,6 +24,11 @@ footer{
     }
     .section-item{
 
+    }
+    .nav{
+        .nav-link{
+            display: inline-block;
+        }
     }
     .contact-info{
         color: #465b52;

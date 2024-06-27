@@ -9,8 +9,8 @@ import { AuthService } from './auth.service';
 })
 export class CartService {
   uid:any =''
-  
-  constructor(private fireStore:AngularFirestore,  private authService:AuthService ) { 
+
+  constructor(private fireStore:AngularFirestore,  private authService:AuthService ) {
     this.authService.user.subscribe(result=>{
       this.uid= result?.uid;
     })

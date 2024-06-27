@@ -8,7 +8,9 @@
                 <button class="navbar-toggler" (click)="navbarToggle()" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-icon"></span>
+                    <span class="navbar-icon"></span>
+                    <span class="navbar-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" [class.show]="isOpen" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -39,12 +41,14 @@
                             <a class="nav-link" routerLink="signup" routerLinkActive="active-route">signUp</a>
                         </li>
     
-                        <li class="nav-item me-3" *ngIf="userActive">
+                        <li class="nav-item me-3 " *ngIf="userActive">
                             <a class="nav-link" routerLink="cart" routerLinkActive="active-route"><i class="fa fa-bag-shopping"></i></a>
                         </li>
-    
-                    </ul>
                     <button class="btn btn-primary logout-btn" (click)="signOut()" *ngIf="userActive">Log Out</button>
+                        
+                        
+                    </ul>
+
                 </div>
             </div>
         </nav>

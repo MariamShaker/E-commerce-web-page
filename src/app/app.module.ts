@@ -12,12 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SummaryPipe } from './pipes/summary.pipe';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    SummaryPipe
-    
-
-  ],
+  declarations: [AppComponent, SummaryPipe],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -25,11 +20,11 @@ import { SummaryPipe } from './pipes/summary.pipe';
     CoreModule,
     AngularFireModule.initializeApp(environment.firebase),
     DashboardModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
-    
-  exports:[]
+
+  exports: [],
 })
-export class AppModule { }
+export class AppModule {}

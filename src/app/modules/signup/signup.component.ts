@@ -15,10 +15,11 @@ import { noSpace } from './validations/no-space.validation';
   styleUrls: ['./signup.component.scss'],
 })
 export class SignupComponent implements OnInit {
-  
-  constructor(private authServices: AuthService, private users: UsersService, private userService:UsersService) {
-    
-  }
+  constructor(
+    private authServices: AuthService,
+    private users: UsersService,
+    private userService: UsersService
+  ) {}
 
   //show password for  password
   showP: boolean = false;
@@ -30,9 +31,7 @@ export class SignupComponent implements OnInit {
   showPassword() {
     this.show = !this.show;
   }
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void {}
   form = new FormGroup(
     {
       userName: new FormControl('', [
@@ -67,17 +66,18 @@ export class SignupComponent implements OnInit {
   }
   errMassage: string = '';
   signUp(form: any) {
-    let data:User = form.value;
-    
-    this.authServices.signUp(data.email,data.password).then(result=>{
-      this.errMassage = '';
-      console.log(result.user?.uid)
-      this.userService.addUser(data,result.user?.uid)
-    })
-    .catch((err) => {
-          this.errMassage = err;
-          console.log('a >',err)
-        });
-    
+    let data: User = form.value;
+
+    this.authServices
+      .signUp(data.email, data.password)
+      .then((result) => {
+        this.errMassage = '';
+        // console.log(result.user?.uid)
+        this.userService.addUser(data, result.user?.uid);
+      })
+      .catch((err) => {
+        this.errMassage = err;
+        console.log('a >', err);
+      });
   }
 }
